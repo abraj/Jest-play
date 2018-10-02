@@ -3,6 +3,18 @@ test('adds 1 + 2 to equal 3', () => {
   expect(1 + 2).not.toBe(5);
 });
 
+// NOTE: describe block is optional, mainly used when scoping is needed (eg. during setup and teardown)
+// NOTE: It is a good practice to use only one assertion in a test.
+describe('Test Addition', () => {
+  test('adds 1 + 2 to equal 3', () => {
+    expect(1 + 2).toBe(3);
+  });
+
+  test('adds 1 + 2 to not equal 5', () => {
+    expect(1 + 2).not.toBe(5);
+  });
+});
+
 test('object assignment', () => {
   const data = { one: 1 };
   data['two'] = 2;
@@ -10,7 +22,7 @@ test('object assignment', () => {
   expect([1, 2]).toEqual([1, 2]);
 });
 
-test('null', () => {
+test('Test: null', () => {
   const n = null;
   expect(n).toBeNull();
   expect(n).toBeDefined();
@@ -19,7 +31,7 @@ test('null', () => {
   expect(n).toBeFalsy();
 });
 
-test('zero', () => {
+test('Test: zero', () => {
   const z = 0;
   expect(z).not.toBeNull();
   expect(z).toBeDefined();
